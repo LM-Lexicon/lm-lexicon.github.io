@@ -1,312 +1,462 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+    <meta charset="utf-8">
+    <meta name="description" content="LM-LEXICON: Improving Definition Modeling via Harmonizing Semantic Experts - An innovative definition modeling approach using mixture-of-experts architecture">
+    <meta property="og:title" content="LM-LEXICON: Improving Definition Modeling via Harmonizing Semantic Experts" />
+    <meta property="og:description" content="An innovative definition modeling approach that incorporates data clustering, semantic expert learning, and model merging using a sparse mixture-of-experts architecture." />
+    <meta property="og:url" content="https://lm-lexicon.github.io" />
+    <meta property="og:image" content="static/image/your_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    <meta name="twitter:title" content="LM-LEXICON: Improving Definition Modeling via Harmonizing Semantic Experts">
+    <meta name="twitter:description" content="An innovative definition modeling approach using mixture-of-experts architecture with +7% BLEU improvement over state-of-the-art.">
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords" content="definition modeling, mixture-of-experts, semantic experts, natural language processing, LM-LEXICON, AACL, language models">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LM-LEXICON: Improving Definition Modeling via Harmonizing Semantic Experts</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
 </head>
+
 <body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">LM-LEXICON: Improving Definition Modeling via Harmonizing Semantic Experts</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="mailto:liuyang@bigai.ai" target="_blank">Yang Liu</a><sup>1*†</sup>,</span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Jiaye Yang</a><sup>2*</sup>,</span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Weikang Li</a><sup>3</sup>,</span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Jiahui Liang</a><sup>2</sup>,</span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Yang Li</a><sup>2</sup>,</span>
+                            <span class="author-block">
+                                <a href="#" target="_blank">Lingyong Yan</a><sup>2</sup>
+                            </span>
+                        </div>
 
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>BIGAI &nbsp;&nbsp; <sup>2</sup>Baidu Inc. &nbsp;&nbsp; <sup>3</sup>Peking University<br>Preprint</span>
+                            <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Correspondence to: liuyang@bigai.ai</small></span>
+                        </div>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="AACL25_LM_Lexicon.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+                                <span class="link-block">
+                                    <a href="https://github.com/lm-lexicon/lm-lexicon" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                                <span class="link-block">
+                                    <a href="https://huggingface.co/LM-Lexicon" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            🤗
+                                        </span>
+                                        <span>Model</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+    <!-- Main Figure -->
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <img src="static/images/main-figure-full.pdf" alt="LM-LEXICON architecture overview" style="width: 100%; max-width: 800px;" />
+                <h2 class="subtitle has-text-centered">
+                    LM-Lexicon achieves substantial improvements (+7% BLEU score) over existing methods on five widely used benchmarks by decomposing definition modeling into specialized semantic domains.
+                </h2>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+    <!-- Abstract -->
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            We introduce <strong>LM-LEXICON</strong>, an innovative definition modeling approach that incorporates data clustering, semantic expert learning, and model merging using a sparse mixture-of-experts architecture. By decomposing the definition modeling task into specialized semantic domains, where small language models are trained as domain experts, LM-LEXICON achieves substantial improvements (+7% BLEU score compared with the prior state-of-the-art model) over existing methods on five widely used benchmarks. Empirically, we demonstrate that 1) the clustering strategy enables fine-grained expert specialization with nearly 10% improvement in definition quality; 2) the semantic-aware domain-level routing mechanism achieves higher expert efficacy (+1%) than conventional token-level routing; and 3) further performance gains can be obtained through test-time compute and semantic expert scaling. Our work advances definition modeling while providing insights into the development of efficient language models for semantic-intensive applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
+    </section>
 
+    <!-- Key Results and Figures -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3">Key Results</h2>
+                <div class="columns is-multiline is-centered">
+                    <div class="column is-one-third">
+                        <div class="box has-text-centered">
+                            <h3 class="title is-4 has-text-success">+7%</h3>
+                            <p class="subtitle">BLEU Score Improvement over State-of-the-Art</p>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="box has-text-centered">
+                            <h3 class="title is-4 has-text-info">+10%</h3>
+                            <p class="subtitle">Definition Quality Improvement through Expert Specialization</p>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="box has-text-centered">
+                            <h3 class="title is-4 has-text-warning">5</h3>
+                            <p class="subtitle">Benchmarks Evaluated (WordNet, Oxford, Wikipedia, Urban, 3D-EX)</p>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+                <!-- Figures Carousel -->
+                <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item">
+                        <img src="static/images/3d-ex-4-clusters-10k.pdf" alt="Four-cluster visualization of 3D-EX dataset" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" />
+                        <h2 class="subtitle has-text-centered">
+                            <strong>Data Clustering Visualization:</strong> Four semantic clusters identified in 3D-EX dataset showing clear separation between Scientific terms, Person names, Adjectives, and Proper nouns.
+                        </h2>
+                    </div>
+                    <div class="item">
+                        <img src="static/images/scaling-semantic-experts.pdf" alt="Performance scaling with number of experts" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" />
+                        <h2 class="subtitle has-text-centered">
+                            <strong>Expert Scaling Analysis:</strong> Performance consistently improves with more semantic experts, demonstrating the scalability of our approach.
+                        </h2>
+                    </div>
+                    <div class="item">
+                        <img src="static/images/human_eval.pdf" alt="Human evaluation results" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" />
+                        <h2 class="subtitle has-text-centered">
+                            <strong>Human Evaluation:</strong> LM-LEXICON-MoE outperforms baselines across all criteria including accuracy, clarity, and context appropriateness.
+                        </h2>
+                    </div>
+                    <div class="item">
+                        <img src="static/images/repeated-sampling-performance.pdf" alt="Test-time scaling performance" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" />
+                        <h2 class="subtitle has-text-centered">
+                            <strong>Test-time Scaling:</strong> Performance gains through repeated sampling with oracle verifier across all five benchmarks.
+                        </h2>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
+    </section>
+
+    <!-- Methodology Overview -->
+    <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3">Methodology Overview</h2>
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-full">
+                        <div class="content has-text-justified">
+                            <h4 class="title is-4">Split-then-Merge Pipeline</h4>
+                            <p>LM-LEXICON follows a three-stage approach:</p>
+                            <ul>
+                                <li><strong>Data Clustering:</strong> Training data is partitioned into semantically distinctive clusters using balanced k-means on semantic embeddings</li>
+                                <li><strong>Expert Training:</strong> Domain-specific semantic experts are trained on each cluster independently</li>
+                                <li><strong>Model Merging:</strong> Experts are merged into a unified Mixture-of-Experts (MoE) model with domain-level routing</li>
+                            </ul>
+
+                            <h4 class="title is-4">Key Innovations</h4>
+                            <ul>
+                                <li><strong>Semantic Expert Specialization:</strong> Unlike conventional MoE that uses token-level routing, we employ domain-level sequence routing for semantic-intensive tasks</li>
+                                <li><strong>Data Clustering Strategy:</strong> Semantic embedding-based clustering enables fine-grained expert specialization with nearly 10% improvement</li>
+                                <li><strong>Scalable Architecture:</strong> The framework allows for easy integration of new domain experts and efficient inference</li>
+                            </ul>
+
+                            <h4 class="title is-4">Definition Examples</h4>
+                            <p>Here are some examples of how LM-LEXICON generates high-quality definitions across different domains:</p>
+                            
+                            <div class="box" style="margin-bottom: 1rem;">
+                                <div class="columns">
+                                    <div class="column is-one-quarter">
+                                        <p class="has-text-weight-semibold has-text-info">Scientific Domain</p>
+                                    </div>
+                                    <div class="column">
+                                        <p><strong>Term:</strong> Stratosphere</p>
+                                        <p><strong>Context:</strong> "A stable, clear atmospheric layer ideal for aircraft."</p>
+                                        <p><strong>Definition:</strong> "The stratosphere is composed of stratified temperature zones."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="box" style="margin-bottom: 1rem;">
+                                <div class="columns">
+                                    <div class="column is-one-quarter">
+                                        <p class="has-text-weight-semibold has-text-success">Person Names</p>
+                                    </div>
+                                    <div class="column">
+                                        <p><strong>Term:</strong> Julie Delpy</p>
+                                        <p><strong>Context:</strong> "Julie Delpy Explains Before Midnight, Feminism, ..."</p>
+                                        <p><strong>Definition:</strong> "French-American actress, known for 'Before' trilogy."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="box">
+                                <div class="columns">
+                                    <div class="column is-one-quarter">
+                                        <p class="has-text-weight-semibold has-text-warning">Social Terms</p>
+                                    </div>
+                                    <div class="column">
+                                        <p><strong>Term:</strong> Genderqueer</p>
+                                        <p><strong>Context:</strong> "'Genderqueer', along with being an umbrella term, ..."</p>
+                                        <p><strong>Definition:</strong> "Anyone whose gender identity isn't strictly male or female."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+    </section>
+
+    <!-- Detailed Analysis -->
+    <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3">Detailed Analysis</h2>
+                
+                <!-- Ablation Studies -->
+                <div class="columns is-centered">
+                    <div class="column is-two-thirds">
+                        <h4 class="title is-4">Ablation Studies</h4>
+                        <div class="content">
+                            <p>Our comprehensive ablation studies demonstrate the effectiveness of each component:</p>
+                            <ul>
+                                <li><strong>Data Partitioning:</strong> Semantic clustering outperforms random split (+7% BLEU) and lexical-based partition (+1% BLEU)</li>
+                                <li><strong>Routing Policy:</strong> Domain-level routing achieves higher expert efficacy (+1%) than conventional token-level routing</li>
+                                <li><strong>Expert Scaling:</strong> Performance consistently increases with more semantic experts (N=1: 41.38% → N=8: 46.86% BLEU)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In-Context Learning Comparison -->
+                <div class="columns is-centered">
+                    <div class="column is-full">
+                        <h4 class="title is-4">Comparison with Large Language Models</h4>
+                        <div class="columns">
+                            <div class="column is-half">
+                                <img src="static/images/dm-icl-scaling.pdf" alt="In-context learning scaling results" style="width: 100%; max-width: 500px;" />
+                            </div>
+                            <div class="column is-half">
+                                <div class="content">
+                                    <p>Even with many-shot in-context learning (up to 128 examples), frontier LLMs struggle to match our performance:</p>
+                                    <ul>
+                                        <li><strong>GPT-4-Turbo:</strong> Best performance at 32-shot still below our zero-shot results</li>
+                                        <li><strong>Claude-3-Opus:</strong> Shows limited improvement with more examples</li>
+                                        <li><strong>Gemini-1.5-Pro:</strong> Competitive but inconsistent across metrics</li>
+                                    </ul>
+                                    <p class="has-text-weight-semibold">This demonstrates that specialized architecture outperforms general-purpose models for definition modeling.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+    </section>
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+    <!-- Performance Comparison -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3">Performance Comparison</h2>
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <div class="table-container">
+                            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>WordNet (BLEU/ROUGE)</th>
+                                        <th>Oxford (BLEU/ROUGE)</th>
+                                        <th>Wikipedia (BLEU/ROUGE)</th>
+                                        <th>Urban (BLEU/ROUGE)</th>
+                                        <th>3D-EX (BLEU/ROUGE)</th>
+                                        <th>Average (BLEU/ROUGE)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="https://aclanthology.org/2021.emnlp-main.194">Rerank-T5 (2021)</a></td>
+                                        <td>30.91 / 30.99</td>
+                                        <td>25.56 / 28.00</td>
+                                        <td>55.61 / 57.25</td>
+                                        <td>17.77 / 18.25</td>
+                                        <td>34.43 / 38.57</td>
+                                        <td>32.85 / 34.61</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://openai.com/index/gpt-4-research">GPT-4-Turbo</a> + <a href="https://neurips.cc/virtual/2024/poster/96277">Many-shot ICL</a></td>
+                                        <td>27.46 / 29.74</td>
+                                        <td>20.44 / 34.35</td>
+                                        <td>35.40 / 40.68</td>
+                                        <td>22.53 / 26.53</td>
+                                        <td>29.73 / 37.66</td>
+                                        <td>27.11 / 33.79</td>
+                                    </tr>
+                                    <tr class="is-selected">
+                                        <td><strong>LM-Lexicon-MoE (Ours)</strong></td>
+                                        <td><strong>40.09 / 40.51</strong></td>
+                                        <td><strong>23.35 / 32.94</strong></td>
+                                        <td><strong>60.31 / 55.52</strong></td>
+                                        <td><strong>31.26 / 33.81</strong></td>
+                                        <td><strong>45.69 / 46.07</strong></td>
+                                        <td><strong>40.14 / 41.77</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="has-text-centered"><em>Performance comparison across five benchmarks. LM-LEXICON-MoE achieves consistent improvements across all datasets.</em></p>
+                        
+                        <!-- Additional Performance Visualization -->
+                        <div class="columns is-centered" style="margin-top: 2rem;">
+                            <div class="column is-three-quarters">
+                                <img src="static/images/llama-performance-3d-ex.pdf" alt="Performance scaling on 3D-EX dataset" style="width: 100%; max-width: 700px; margin: 0 auto; display: block;" />
+                                <p class="has-text-centered" style="margin-top: 1rem;"><em><strong>Performance Scaling Analysis:</strong> Detailed comparison showing how our MoE approach scales with different numbers of experts on the 3D-EX benchmark.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+    <!-- Applications and Impact -->
+    <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3">Applications and Impact</h2>
+                
+                <div class="columns">
+                    <div class="column is-half">
+                        <div class="content">
+                            <h4 class="title is-4">Practical Applications</h4>
+                            <ul>
+                                <li><strong>Dictionary Construction:</strong> Automated generation of high-quality definitions for new terms and evolving language</li>
+                                <li><strong>Educational Tools:</strong> Enhanced vocabulary learning systems with context-aware definitions</li>
+                                <li><strong>Domain-Specific Lexicons:</strong> Specialized dictionaries for scientific, technical, and professional domains</li>
+                                <li><strong>Cross-lingual Applications:</strong> Framework can be extended to multilingual definition modeling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="column is-half">
+                        <div class="content">
+                            <h4 class="title is-4">Key Contributions</h4>
+                            <ul>
+                                <li><strong>Novel Architecture:</strong> First work to apply domain-level routing in MoE for semantic tasks</li>
+                                <li><strong>Clustering Strategy:</strong> Semantic embedding-based data partitioning for expert specialization</li>
+                                <li><strong>Comprehensive Evaluation:</strong> Extensive experiments across five benchmarks with human evaluation</li>
+                                <li><strong>Scalable Framework:</strong> Enables easy integration of new domain experts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- End of Statcounter Code -->
+                <div class="columns is-centered">
+                    <div class="column is-two-thirds">
+                        <div class="box has-background-info-light">
+                            <h4 class="title is-4 has-text-info">Future Directions</h4>
+                            <div class="content">
+                                <p>Our work opens several promising research directions:</p>
+                                <ul>
+                                    <li>Extending to more fine-grained semantic domains beyond four clusters</li>
+                                    <li>Applying the framework to other semantic-intensive NLP tasks</li>
+                                    <li>Investigating cross-lingual expert specialization</li>
+                                    <li>Developing more sophisticated routing mechanisms</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  </body>
-  </html>
+    <!-- Paper Poster -->
+    <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title">Poster</h2>
+                <iframe src="AACL25_LM_Lexicon.pdf" width="100%" height="550"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- BibTeX Citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{liu2025lmlexicon,
+  title={LM-LEXICON: Improving Definition Modeling via Harmonizing Semantic Experts},
+  author={Liu, Yang and Yang, Jiaye and Li, Weikang and Liang, Jiahui and Li, Yang and Yan, Lingyong},
+  journal={arXiv preprint},
+  year={2025}
+}</code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br><br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
