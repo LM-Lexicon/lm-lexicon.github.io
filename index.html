@@ -266,6 +266,14 @@
             color: var(--accent-color);
         }
 
+        @media (min-width: 1025px) {
+            .box, .table-container {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
         /* Enhanced Mobile Responsive Design */
         @media (max-width: 1024px) {
             .container {
@@ -775,7 +783,7 @@
 
         .sticky-nav .nav-links {
             display: flex;
-            gap: 1rem;
+            gap: 0rem;
         }
 
         .sticky-nav .nav-links a {
@@ -1043,6 +1051,21 @@
             .typeset p {
                 font-size: 0.9rem;
             }
+        }
+
+        #methodology .title.is-4,
+        #analysis .title.is-4,
+        #analysis .title.is-5 {
+            padding-left: 6rem;
+        }
+
+        h2.title.is-3 {
+            padding-left: 6rem;
+        }
+
+        .column.is-full {
+            padding-left: 10%;
+            padding-right: 10%;
         }
     </style>
 
@@ -1988,7 +2011,7 @@
                         <div class="columns">
                             <div class="column is-half">
                                 <img src="static/images/dm-icl-scaling.png" alt="In-context learning scaling results"
-                                    style="width: 130%; max-width: 650px;" />
+                                    style="width: 100%;" />
                             </div>
                             <div class="column is-half">
                                 <div class="content">
@@ -2184,7 +2207,7 @@
                         style="text-decoration: none; color: inherit;"># Applications and Impact</a></h2>
 
                 <div class="columns">
-                    <div class="column is-half">
+                    <div class="column is-half" style="width: 650px !important; padding-left: 15em;">
                         <div class="content">
                             <h4 class="title is-4">Practical Applications</h4>
                             <ul>
@@ -2200,7 +2223,7 @@
                         </div>
                     </div>
 
-                    <div class="column is-half">
+                    <div class="column is-half" style="width: 650px !important; padding-left: 10em;">
                         <div class="content">
                             <h4 class="title is-4">Key Contributions</h4>
                             <ul>
