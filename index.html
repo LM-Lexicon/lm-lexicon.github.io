@@ -20,7 +20,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="keywords"
         content="definition modeling, mixture-of-experts, semantic experts, natural language processing, LM-Lexicon, AACL, language models">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <title>LM-Lexicon: Improving Definition Modeling via Harmonizing Semantic Experts</title>
     <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
@@ -62,9 +66,31 @@
 
         /* Enhanced typography */
         body {
-            font-family: 'Inter', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            font-family: 'Georgia', serif;
+            font-size: 1.125rem;
+            line-height: 1.7;
             color: var(--text-primary);
+        }
+
+        /* Enhanced content typography */
+        .content {
+            font-size: 1.15rem;
+            line-height: 1.75;
+        }
+
+        .content p {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+        }
+
+        .content ul, .content ol {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
         }
 
         /* Fade-in animations */
@@ -123,6 +149,58 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
             background: var(--gradient-accent);
+        }
+
+        /* Latest desktop button styles for publication links */
+        @media (min-width: 769px) {
+            .publication-links .button.is-dark {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border: none;
+                color: white;
+                font-weight: 700;
+                font-size: 0.95rem;
+                padding: 0.75rem 1.5rem;
+                border-radius: 50px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .publication-links .button.is-dark::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.5s;
+            }
+
+            .publication-links .button.is-dark:hover::before {
+                left: 100%;
+            }
+
+            .publication-links .button.is-dark:hover {
+                transform: translateY(-4px) scale(1.05);
+                box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+                background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            }
+
+            .publication-links .button.is-dark:active {
+                transform: translateY(-2px) scale(1.02);
+                box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            }
+
+            .publication-links .button.is-dark .icon {
+                transition: transform 0.3s ease;
+            }
+
+            .publication-links .button.is-dark:hover .icon {
+                transform: scale(1.1) rotate(5deg);
+            }
         }
 
         /* Enhanced boxes and cards */
@@ -191,8 +269,12 @@
         }
 
         .subtitle {
-            color: white !important;
-            font-weight: bold !important;
+            color: black !important;
+        }
+
+        .caption {
+            color: gray !important;
+            font-weight: normal !important;
         }
 
         /* Enhanced carousel */
@@ -267,7 +349,9 @@
         }
 
         @media (min-width: 1025px) {
-            .box, .table-container {
+
+            .box,
+            .table-container {
                 width: 80%;
                 margin-left: auto;
                 margin-right: auto;
@@ -278,6 +362,8 @@
         @media (max-width: 1024px) {
             .container {
                 padding: 0 1rem !important;
+                max-width: 100% !important;
+                margin: 0 !important;
             }
 
             .columns {
@@ -290,14 +376,44 @@
         }
 
         @media (max-width: 768px) {
+
             /* Layout adjustments */
             .fade-in {
                 transform: translateY(15px);
             }
 
             .container {
-                padding: 0 0.75rem !important;
+                padding: 0 0.5rem !important;
                 max-width: 100% !important;
+                margin: 0 !important;
+                width: 100% !important;
+                overflow-x: hidden;
+            }
+
+            .container.is-max-desktop {
+                max-width: 100% !important;
+                padding: 0 0.5rem !important;
+            }
+
+            /* Preprint section mobile optimization */
+            #Preprint {
+                padding-bottom: 1rem !important;
+            }
+
+            #Preprint .hero-body {
+                padding: 1rem !important;
+            }
+
+            #Preprint .container {
+                padding: 0 0.5rem !important;
+            }
+
+            #Preprint iframe {
+                height: 400px !important;
+                width: calc(100% + 1rem) !important;
+                margin: 0 -0.5rem !important;
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
             }
 
             /* Typography scaling */
@@ -339,22 +455,24 @@
 
             /* Content spacing */
             .hero-body {
-                padding: 1.5rem 0.75rem !important;
+                padding: 1rem 0.5rem !important;
             }
 
             .section {
-                padding: 1.5rem 0.75rem !important;
+                padding: 1rem 0.5rem !important;
             }
 
             .hero.is-small .hero-body {
-                padding: 1rem 0.75rem !important;
+                padding: 0.75rem 0.5rem !important;
             }
 
             /* Box and card adjustments */
             .box {
-                margin-bottom: 0.75rem !important;
+                margin-bottom: 0.5rem !important;
                 padding: 0.75rem !important;
                 border-radius: 12px !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
 
             .hero.is-small .box .title {
@@ -364,9 +482,10 @@
             /* Table responsiveness */
             .table-container {
                 overflow-x: auto;
-                margin: 0 -0.75rem 1rem -0.75rem !important;
-                padding: 0 0.75rem;
+                margin: 0 -0.5rem 0.75rem -0.5rem !important;
+                padding: 0 0.5rem;
                 border-radius: 8px;
+                -webkit-overflow-scrolling: touch;
             }
 
             .table {
@@ -391,16 +510,16 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 0.5rem;
+                gap: 0.25rem;
             }
 
             .link-block {
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.25rem !important;
             }
 
             /* Carousel and media */
             .carousel {
-                margin: 0 -0.75rem !important;
+                margin: 0 -0.5rem !important;
                 border-radius: 12px !important;
             }
 
@@ -412,7 +531,7 @@
 
             /* Navigation adjustments */
             .sticky-nav {
-                padding: 0.5rem 0.75rem;
+                padding: 0.4rem 0.5rem;
             }
 
             .sticky-nav .nav-links {
@@ -458,11 +577,13 @@
             }
 
             .parallax-bg {
-                display: none; /* Disable parallax on mobile for performance */
+                display: none;
+                /* Disable parallax on mobile for performance */
             }
 
             .floating-element {
-                display: none; /* Disable floating elements on mobile */
+                display: none;
+                /* Disable floating elements on mobile */
             }
 
             /* Main figure */
@@ -482,9 +603,16 @@
         }
 
         @media (max-width: 480px) {
+
             /* Extra small devices */
             .container {
-                padding: 0 0.5rem !important;
+                padding: 0 0.4rem !important;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .container.is-max-desktop {
+                padding: 0 0.4rem !important;
             }
 
             .publication-title {
@@ -515,16 +643,16 @@
             }
 
             .hero-body {
-                padding: 1rem 0.5rem !important;
+                padding: 0.75rem 0.4rem !important;
             }
 
             .section {
-                padding: 1rem 0.5rem !important;
+                padding: 0.75rem 0.4rem !important;
             }
 
             .box {
                 padding: 0.6rem !important;
-                margin-bottom: 0.6rem !important;
+                margin-bottom: 0.5rem !important;
                 border-radius: 8px !important;
             }
 
@@ -533,8 +661,8 @@
             }
 
             .table-container {
-                margin: 0 -0.5rem 1rem -0.5rem !important;
-                padding: 0 0.5rem;
+                margin: 0 -0.4rem 0.75rem -0.4rem !important;
+                padding: 0 0.4rem;
             }
 
             .table th,
@@ -592,7 +720,15 @@
 
             /* Iframe adjustments */
             iframe {
-                height: 600px !important;
+                height: 400px !important;
+                width: 100% !important;
+            }
+
+            /* Preprint section mobile optimization */
+            #Preprint iframe {
+                height: 350px !important;
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
             }
 
             /* Column stacking */
@@ -607,10 +743,16 @@
         }
 
         @media (max-width: 360px) {
+
             /* Very small devices */
+            .container {
+                padding: 0 0.5rem !important;
+            }
+
             .publication-title {
                 font-size: 1.2rem !important;
                 padding: 0 0.5rem;
+                line-height: 1.3 !important;
             }
 
             .hero-body {
@@ -636,6 +778,22 @@
                 flex-direction: column;
                 gap: 0.25rem;
             }
+
+            /* Preprint section for very small devices */
+            #Preprint iframe {
+                height: 250px !important;
+                margin: 0 -0.5rem !important;
+                border-radius: 4px;
+            }
+
+            #Preprint .container {
+                padding: 0 !important;
+            }
+
+            #Preprint h2.title {
+                padding: 0 0.5rem !important;
+                font-size: 1.3rem !important;
+            }
         }
 
         /* Mobile-specific optimizations */
@@ -653,6 +811,29 @@
             transform: none;
         }
 
+        /* iPhone specific optimizations */
+        @supports (-webkit-touch-callout: none) {
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .columns {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .publication-title {
+                word-break: break-word;
+                hyphens: auto;
+                -webkit-hyphens: auto;
+            }
+
+            .table-container {
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
         /* Touch-friendly improvements */
         .mobile-device .button,
         .mobile-device .link-block a {
@@ -663,7 +844,7 @@
         }
 
         .mobile-device .sticky-nav .nav-links a {
-            min-height: 40px;
+            min-height: 20px;
         }
 
         /* Code blocks */
@@ -681,67 +862,67 @@
 
         /* Compact spacing throughout the page */
         .hero-body {
-            padding: 2rem 1.5rem !important;
+            padding: 1.5rem 1rem !important;
         }
 
         .section {
-            padding: 2rem 1.5rem !important;
+            padding: 1.5rem 1rem !important;
         }
 
         .container {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         .columns {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         .title {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         .subtitle {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         .content {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         .box {
-            margin-bottom: 1rem !important;
-            padding: 1rem !important;
+            margin-bottom: 0.75rem !important;
+            padding: 0.75rem !important;
         }
 
         .table-container {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         .section-separator {
             height: 1px;
             background: var(--gradient-primary);
-            margin: 1.5rem 0 !important;
+            margin: 1rem 0 !important;
             opacity: 0.3;
         }
 
         /* Compact carousel */
         .carousel {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         /* Compact figures */
         .figure {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         /* Compact lists */
         ul {
-            margin-bottom: 0.5rem !important;
+            margin-bottom: 0.4rem !important;
         }
 
         /* Compact iframe */
         iframe {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         /* Sticky Navigation */
@@ -789,9 +970,9 @@
         .sticky-nav .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.2rem;
             transition: color 0.3s ease;
-            padding: 0.25rem 0.5rem;
+            padding: 0.15rem 0.4rem;
             border-radius: 6px;
         }
 
@@ -1053,19 +1234,43 @@
             }
         }
 
-        #methodology .title.is-4,
-        #analysis .title.is-4,
-        #analysis .title.is-5 {
-            padding-left: 6rem;
+        @media (min-width: 769px) {
+
+            #methodology .title.is-4,
+            #analysis .title.is-4,
+            #analysis .title.is-5 {
+                padding-left: 6rem;
+            }
+
+            h2.title.is-3 {
+                padding-left: 6rem;
+            }
+
+            .column.is-full {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
         }
 
-        h2.title.is-3 {
-            padding-left: 6rem;
-        }
+        @media (max-width: 768px) {
 
-        .column.is-full {
-            padding-left: 10%;
-            padding-right: 10%;
+            #methodology .title.is-4,
+            #analysis .title.is-4,
+            #analysis .title.is-5,
+            h2.title.is-3 {
+                padding-left: 0 !important;
+                text-align: center;
+            }
+
+            .column.is-full {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .columns.is-centered .column.is-full {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
         }
     </style>
 
@@ -1151,16 +1356,16 @@
             window.addEventListener('scroll', handleScroll, {passive: true});
 
             // Enhanced mobile interactions
-            const isMobile = window.innerWidth <= 768;
-            
+            const isMobile = window.innerWidth <= 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
             if (isMobile) {
                 // Disable hover effects on mobile for better performance
                 document.body.classList.add('mobile-device');
-                
+
                 // Add touch-friendly scrolling
-                document.addEventListener('touchstart', function() {}, {passive: true});
-                document.addEventListener('touchmove', function() {}, {passive: true});
-                
+                document.addEventListener('touchstart', function () { }, {passive: true});
+                document.addEventListener('touchmove', function () { }, {passive: true});
+
                 // Optimize carousel for touch
                 if (typeof bulmaCarousel !== 'undefined') {
                     const carousels = bulmaCarousel.attach('.carousel', {
@@ -1173,7 +1378,7 @@
                         touchEnabled: true
                     });
                 }
-                
+
                 // Reduce animation intensity on mobile
                 const elements = document.querySelectorAll('.fade-in');
                 elements.forEach(element => {
@@ -1353,7 +1558,7 @@
                                             </path>
                                         </svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
                                     </span>
-                                    <span>Paper</span>
+                                    <span>PAPER</span>
                                 </a>
                             </span>
                             <!-- Code Link. -->
@@ -1369,7 +1574,7 @@
                                             </path>
                                         </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
                                     </span>
-                                    <span>Code</span>
+                                    <span>CODE</span>
                                 </a>
                             </span>
                             <!--Twitter Link. -->
@@ -1393,7 +1598,7 @@
                                             </path>
                                         </svg><!-- <i class="far fa-images"></i> Font Awesome fontawesome.com -->
                                     </span>
-                                    <span>Checkpoint</span>
+                                    <span>CHECKPOINT</span>
                                 </a>
                             </span>
                             <!--<span class="link-block">-->
@@ -1416,7 +1621,7 @@
                                             </path>
                                         </svg><!-- <i class="far fa-clone"></i> Font Awesome fontawesome.com -->
                                     </span>
-                                    <span>Data</span>
+                                    <span>DATA</span>
                                 </a>
                             </span>
                         </div>
@@ -1455,9 +1660,9 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-3"><a href="#abstract"
+                    <h2 class="title is-3" style="padding-left: 0px !important;"><a href="#abstract"
                             style="text-decoration: none; color: inherit;">Abstract</a></h2>
-                    <div class="content has-text-justified">
+                    <div class="content has-text-centered">
                         <p>
                             We introduce <strong>LM-Lexicon</strong>, an innovative definition modeling approach that
                             incorporates data clustering, semantic expert learning, and model merging using a sparse
@@ -1493,19 +1698,22 @@
                     <div class="column is-one-third">
                         <div class="box has-text-centered">
                             <h3 class="title is-4 has-text-success">+7%</h3>
-                            <p class="subtitle">BLEU Score Improvement over the prior State-of-the-Art</p>
+                            <p class="subtitle" style="color: white !important; font-weight: bold;">BLEU Score
+                                Improvement over the prior State-of-the-Art</p>
                         </div>
                     </div>
                     <div class="column is-one-third">
                         <div class="box has-text-centered">
                             <h3 class="title is-4 has-text-info">+10%</h3>
-                            <p class="subtitle">Definition Quality Improvement through Expert Specialization</p>
+                            <p class="subtitle" style="color: white !important; font-weight: bold;">Definition Quality
+                                Improvement through Expert Specialization</p>
                         </div>
                     </div>
                     <div class="column is-one-third">
                         <div class="box has-text-centered">
                             <h3 class="title is-4 has-text-warning">5</h3>
-                            <p class="subtitle">Benchmarks Evaluated (WordNet, Oxford, Wikipedia, Urban, 3D-EX)</p>
+                            <p class="subtitle" style="color: white !important; font-weight: bold;">Benchmarks Evaluated
+                                (WordNet, Oxford, Wikipedia, Urban, 3D-EX)</p>
                         </div>
                     </div>
                 </div>
@@ -1517,9 +1725,10 @@
                             alt="Four-cluster visualization of 3D-EX dataset"
                             style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" />
                         <h2 class="subtitle has-text-centered">
-                            <strong>Data Clustering Visualization: Four semantic clusters identified in 3D-EX
-                                dataset showing clear separation between Scientific terms, Person names, Adjectives, and
-                                Proper nouns.</strong>
+                            <strong>Data Clustering Visualization:</strong>
+                            Four semantic clusters identified in 3D-EX
+                            dataset showing clear separation between Scientific terms, Person names, Adjectives, and
+                            Proper nouns.
                         </h2>
                     </div>
                     <div class="item">
@@ -1527,24 +1736,24 @@
                             alt="Performance scaling with number of experts"
                             style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" />
                         <h2 class="subtitle has-text-centered">
-                            <strong>Expert Scaling Analysis: Performance consistently improves with more
-                                semantic experts, demonstrating the scalability of our approach.</strong>
+                            <strong>Expert Scaling Analysis:</strong> Performance consistently improves with more
+                            semantic experts, demonstrating the scalability of our approach.
                         </h2>
                     </div>
                     <div class="item">
                         <img src="static/images/human_eval.png" alt="Human evaluation results"
                             style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" />
                         <h2 class="subtitle has-text-centered">
-                            <strong>Human Evaluation: LM-Lexicon-MoE outperforms baselines across all criteria
-                                including accuracy, clarity, and context appropriateness.</strong>
+                            <strong>Human Evaluation:</strong> LM-Lexicon-MoE outperforms baselines across all criteria
+                            including accuracy, clarity, and context appropriateness.
                         </h2>
                     </div>
                     <div class="item">
                         <img src="static/images/repeated-sampling-performance.png" alt="Test-time scaling performance"
                             style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" />
                         <h2 class="subtitle has-text-centered">
-                            <strong>Test-time Scaling: Performance gains through repeated sampling with oracle
-                                verifier across all five benchmarks.</strong>
+                            <strong>Test-time Scaling:</strong> Performance gains through repeated sampling with oracle
+                            verifier across all five benchmarks.
                         </h2>
                     </div>
                 </div>
@@ -1924,7 +2133,8 @@
                                             <li><strong>Consistent gains:</strong> Performance will increase as the
                                                 number of expert increases.</li>
                                             <li><strong>Over-specialization:</strong> Too many experts may lead to data
-                                                sparsity per expert, exhibiting on the slowly growing performance gains.</li>
+                                                sparsity per expert, exhibiting on the slowly growing performance gains.
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -2144,11 +2354,14 @@
                                                 paired t-tests across multiple random seeds. Our method
                                                 demonstrates:</p>
                                                 <ul>
-                                                    <li><strong>Low variance:</strong> Consistent performance across
+                                                    <li><strong style="color: white !important;">Low variance:</strong>
+                                                        Consistent performance across
                                                         different initializations</li>
-                                                    <li><strong>Significant gains:</strong> All improvements exceed 95%
+                                                    <li><strong style="color: white !important;">Significant
+                                                            gains:</strong> All improvements exceed 95%
                                                         confidence intervals</li>
-                                                    <li><strong>Effect sizes:</strong> Cohen's d > 0.8 for all benchmark
+                                                    <li><strong style="color: white !important;">Effect sizes:</strong>
+                                                        Cohen's d > 0.8 for all benchmark
                                                         comparisons, indicating large effect sizes</li>
                                                 </ul>
                                     </div>
@@ -2173,9 +2386,10 @@
                                 <img src="static/images/llama-performance-3d-ex.png"
                                     alt="Performance scaling on 3D-EX dataset"
                                     style="width: 100%; max-width: 700px; margin: 0 auto; display: block;" />
-                                <p class="has-text-centered" style="margin-top: 1rem;"><em><strong>Performance Scaling
-                                            Analysis:</strong> Detailed comparison showing how our MoE approach scales
-                                        with different numbers of experts on the 3D-EX benchmark.</em></p>
+                                <p class="has-text-centered" style="margin-top: 1rem;"><em><strong>Performance gains
+                                            comparison:</strong> Test performance of BLEU on 3D-EX (LM-Lexicon versus
+                                        larger dense models). We assess LLaMA-3.x models and report their 32-shot ICL
+                                        results.</em></p>
                             </div>
                         </div>
                     </div>
@@ -2207,7 +2421,7 @@
                         style="text-decoration: none; color: inherit;"># Applications and Impact</a></h2>
 
                 <div class="columns">
-                    <div class="column is-half" style="width: 650px !important; padding-left: 15em;">
+                    <div class="column is-half">
                         <div class="content">
                             <h4 class="title is-4">Practical Applications</h4>
                             <ul>
@@ -2223,7 +2437,7 @@
                         </div>
                     </div>
 
-                    <div class="column is-half" style="width: 650px !important; padding-left: 10em;">
+                    <div class="column is-half">
                         <div class="content">
                             <h4 class="title is-4">Key Contributions</h4>
                             <ul>
