@@ -84,7 +84,8 @@
             margin-bottom: 1.25rem;
         }
 
-        .content ul, .content ol {
+        .content ul,
+        .content ol {
             font-size: 1.1rem;
             line-height: 1.7;
         }
@@ -970,9 +971,9 @@
         .sticky-nav .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.2rem;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
-            padding: 0.15rem 0.4rem;
+            padding: 0.5rem 0.8rem;
             border-radius: 6px;
         }
 
@@ -1697,22 +1698,22 @@
                 <div class="columns is-multiline is-centered">
                     <div class="column is-one-third">
                         <div class="box has-text-centered">
-                            <h3 class="title is-4 has-text-success">+7%</h3>
-                            <p class="subtitle" style="color: white !important; font-weight: bold;">BLEU Score
-                                Improvement over the prior State-of-the-Art</p>
+                            <h3 class="title is-4 has-text-success" style="margin-bottom: 30px !important;">+7%</h3>
+                            <p class="subtitle" style="color: white !important; font-weight: bold;">Substantial gains on BLEU & ROUGE score
+                                over the prior State-of-the-Art</p>
                         </div>
                     </div>
                     <div class="column is-one-third">
                         <div class="box has-text-centered">
-                            <h3 class="title is-4 has-text-info">+10%</h3>
+                            <h3 class="title is-4 has-text-info" style="margin-bottom: 30px !important;">+10%</h3>
                             <p class="subtitle" style="color: white !important; font-weight: bold;">Definition Quality
                                 Improvement through Expert Specialization</p>
                         </div>
                     </div>
                     <div class="column is-one-third">
                         <div class="box has-text-centered">
-                            <h3 class="title is-4 has-text-warning">5</h3>
-                            <p class="subtitle" style="color: white !important; font-weight: bold;">Benchmarks Evaluated
+                            <h3 class="title is-4 has-text-warning" style="margin-bottom: 30px !important;">5</h3>
+                            <p class="subtitle" style="color: white !important; font-weight: bold;">Benchmarks are Evaluated
                                 (WordNet, Oxford, Wikipedia, Urban, 3D-EX)</p>
                         </div>
                     </div>
@@ -1798,10 +1799,15 @@
                             <p>Here are some examples of how LM-Lexicon generates high-quality definitions across
                                 different domains:</p>
 
-                            <div class="box" style="margin-bottom: 1rem;">
-                                <div class="columns">
+                            <div class="box" style="margin-bottom: 1rem; position: relative;">
+                                <div style="position: absolute; top: 10px; right: 10px; opacity: 0.3; z-index: 0;">
+                                    <img loading="lazy" alt=""
+                                        src="https://cdn.prod.website-files.com/63c57b7a51d43f05fa0a8560/63c581ad11c5c95ea00013dd_quote.svg"
+                                        width="80px">
+                                </div>
+                                <div class="columns" style="position: relative; z-index: 1; margin-bottom: 1px !important;">
                                     <div class="column is-one-quarter">
-                                        <p class="has-text-weight-semibold">Scientific Domain</p>
+                                        <p class="has-text-weight-semibold">[Scientific Domain]</p>
                                     </div>
                                     <div class="column">
                                         <p><b>Term:</b> Stratosphere</p>
@@ -1812,10 +1818,15 @@
                                 </div>
                             </div>
 
-                            <div class="box" style="margin-bottom: 1rem;">
-                                <div class="columns">
+                            <div class="box" style="margin-bottom: 1rem; position: relative;">
+                                <div style="position: absolute; top: 10px; right: 10px; opacity: 0.3; z-index: 0;">
+                                    <img loading="lazy" alt=""
+                                        src="https://cdn.prod.website-files.com/63c57b7a51d43f05fa0a8560/63c581ad11c5c95ea00013dd_quote.svg"
+                                        width="80px">
+                                </div>
+                                <div class="columns" style="position: relative; z-index: 1; margin-bottom: 1px !important;">
                                     <div class="column is-one-quarter">
-                                        <p class="has-text-weight-semibold">Person Names</p>
+                                        <p class="has-text-weight-semibold">[Person Names]</p>
                                     </div>
                                     <div class="column">
                                         <p><b>Term:</b> Julie Delpy</p>
@@ -1825,10 +1836,15 @@
                                 </div>
                             </div>
 
-                            <div class="box">
-                                <div class="columns">
+                            <div class="box" style="position: relative;">
+                                <div style="position: absolute; top: 10px; right: 10px; opacity: 0.3; z-index: 0;">
+                                    <img loading="lazy" alt=""
+                                        src="https://cdn.prod.website-files.com/63c57b7a51d43f05fa0a8560/63c581ad11c5c95ea00013dd_quote.svg"
+                                        width="80px">
+                                </div>
+                                <div class="columns" style="position: relative; z-index: 1; margin-bottom: 1px !important;">
                                     <div class="column is-one-quarter">
-                                        <p class="has-text-weight-semibold">Social Terms</p>
+                                        <p class="has-text-weight-semibold">[Social Terms]</p>
                                     </div>
                                     <div class="column">
                                         <p><b>Term:</b> Genderqueer</p>
